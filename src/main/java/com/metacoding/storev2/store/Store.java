@@ -16,4 +16,8 @@ public class Store {
     private String name;
     private Integer stock;
     private Integer price;
+
+    public void minusStock(int qty) {
+        this.stock = this.stock - qty;
+    }
 }
