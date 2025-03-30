@@ -5,13 +5,16 @@
         <h1>회원가입 페이지</h1>
         <form action="/join" method="post">
             <div class="mb-3 mt-3">
-                <input type="text" class="form-control" placeholder="Enter username" name="username">
+                <label for="username" class="form-label">사용자 이름</label>
+                <input type="text" class="form-control" id="username" placeholder="사용자 이름을 입력하세요" name="username" required>
             </div>
             <div class="mb-3">
-                <input type="password" class="form-control" placeholder="Enter password" name="password">
+                <label for="password" class="form-label">비밀번호</label>
+                <input type="password" class="form-control" id="password" placeholder="비밀번호를 입력하세요" name="password" required>
             </div>
             <div class="mb-3">
-                <input type="text" class="form-control" placeholder="Enter fullname" name="fullname">
+                <label for="fullname" class="form-label">전체 이름</label>
+                <input type="text" class="form-control" id="fullname" placeholder="전체 이름을 입력하세요" name="fullname" required>
             </div>
             <button type="submit" class="btn btn-primary">회원가입</button>
         </form>

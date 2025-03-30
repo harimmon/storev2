@@ -1,29 +1,29 @@
 {{> layout/header}}
 
 <div class="container mt-2">
-
     <div class="mt-4 p-5 bg-light text-dark rounded-4">
-        <p>번호 : 1</p>
-        <p>상품명 : 바나나</p>
-        <p>상품가격 : 3000</p>
-        <p>상품재고 : 40</p>
-    </div>
-
-    <div class="mt-3 mb-3">
-        <a href="#" class="btn btn-outline-primary">수정</a>
-        <form action="#" method="POST" class="d-inline">
-            <button type="submit" class="btn btn-outline-primary">삭제</button>
+        <h1>상품 상세보기</h1>
+        <form action="/store/{{model.id}}/update-form" method="get">
+            <button type="submit" class="btn btn-secondary">수정</button>
+        </form>
+        <form action="/store/{{model.id}}/delete" method="post">
+            <button type="submit" class="btn btn-danger">삭제</button>
+        </form>
+        <div>
+            번호 : {{model.id}} <br>
+            상품명 : {{model.name}} <br>
+            상품가격 : {{model.price}}원 <br>
+            상품재고 : {{model.stock}}개 <br>
+        </div>
+        <hr>
+        <form action="/order/save" method="post">
+            <input type="hidden" value="{{model.id}}" name="storeId">
+            <input type="text" class="form-control" placeholder="당신은 누구인가요?" name="buyer" required>
+            <input type="number" class="form-control" placeholder="구매할 개수" name="qty" required>
+            <button type="submit" class="btn btn-primary">구매</button>
         </form>
     </div>
-
-    <div class="mt-4 p-5 bg-light text-dark rounded-4">
-        <form action="#">
-            <input type="hidden" value="1">
-            <input type="text" placeholder="개수를 입력하세요">
-            <button type="submit" class="btn btn-outline-primary">구매</button>
-        </form>
-    </div>
-
 </div>
+
 </body>
 </html>

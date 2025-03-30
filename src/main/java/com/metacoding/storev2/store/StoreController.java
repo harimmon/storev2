@@ -18,6 +18,12 @@ public class StoreController {
         this.storeService = storeService;
     }
 
+    // 홈 화면
+    @GetMapping("/")
+    public String home() {
+        return "home"; // home.mustache 파일을 반환
+    }
+
     // 상품 등록
     // 홈 화면에서 상품 등록을 눌렀을 때 화면 넘겨주기
     @GetMapping("/store/save-form")
@@ -66,7 +72,7 @@ public class StoreController {
     }
 
     // 상품 목록 전체 보기
-    @GetMapping("/")
+    @GetMapping("/store/list")
     public String list(HttpServletRequest request) {
         List<Store> store = storeService.findAll();
         request.setAttribute("models", store);

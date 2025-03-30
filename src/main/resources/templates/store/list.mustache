@@ -1,29 +1,32 @@
 {{> layout/header}}
 
 <div class="container mt-2">
-  <table class="table table-hover">
-    <thead>
-    <tr>
-      <th>번호</th>
-      <th>상품명</th>
-      <th>상세보기</th>
-    </tr>
-    </thead>
-    <tbody>
-
-    <tr>
-      <td>1</td>
-      <td>바나나</td>
-      <td><a href="#">상세보기</a></td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>딸기</td>
-      <td><a href="#">상세보기</a></td>
-    </tr>
-
-    </tbody>
-  </table>
+    <div class="mt-4 p-5 bg-light text-dark rounded-4">
+        <h1>상품목록</h1>
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>상품명</th>
+                    <th>가격</th>
+                    <th>재고</th>
+                    <th>상세보기</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#models}}
+                    <tr>
+                        <td>{{id}}</td>
+                        <td>{{name}}</td>
+                        <td>{{price}}</td>
+                        <td>{{stock}}</td>
+                        <td><a href="/store/{{id}}">상세보기</a></td>
+                    </tr>
+                {{/models}}
+                </tbody>
+            </table>
+    </div>
 </div>
+
 </body>
 </html>

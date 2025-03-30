@@ -1,39 +1,27 @@
-{{> layout/header}}
+{{>layout/header}}
 
-<div class="container mt-2">
+<section>
+    <table border="1">
+        <tr>
+            <th>주문번호</th>
+            <th>상품명(조인)</th>
+            <th>구매개수</th>
+            <th>총가격</th>
+            <th>구매자이름</th>
+        </tr>
 
-    <div class="mt-4 p-5 bg-light text-dark rounded-4">
-        <h1>구매목록 페이지</h1>
-        <hr>
-        <table class="mt-4 table table-hover">
-            <thead>
+        {{#models}}
             <tr>
-                <th>주문번호</th>
-                <th>상품명</th>
-                <th>구매개수</th>
-                <th>총 가격</th>
+                <td>{{id}}</td>
+                <td>{{name}}</td>
+                <td>{{qty}}</td>
+                <td>{{totalPrice}}</td>
+                <td>{{fullname}}</td>
             </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>1</td>
-                <td>바나나</td>
-                <td>5개</td>
-                <td>15000원</td>
-            </tr>
+        {{/models}}
 
-            <tr>
-                <td>2</td>
-                <td>바나나</td>
-                <td>5개</td>
-                <td>15000원</td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-
-
-</div>
+    </table>
+</section>
 
 </body>
 </html>
